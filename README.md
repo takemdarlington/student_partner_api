@@ -10,7 +10,7 @@ Student partner app api
 
 node 6.3.x or later and mongodb
 
-## developing
+## developing server
 
 run mongodd on a separated terminal instance:
 
