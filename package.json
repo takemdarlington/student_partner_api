@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "Student partner app api",
   "main": "index.js",
+  "license": "StudentPartner",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
     "dev-babel": "nodemon --exec babel-node index.js",
-    "build-babel": "babel index.js --out-file server.js",
-    "build-prod": "npm run build-babel && node index.js"
+    "build-babel": "babel ./model/ --out-dir build && babel index.js --out-file server.js",
+    "build-prod": "npm run build-babel && node server.js"
   },
   "engines": {
     "node": ">=6"
@@ -23,13 +24,16 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/node": "^7.7.7",
+    "@babel/node": "^7.14.7",
     "@babel/preset-env": "^7.7.7",
+    "babel-jest": "^27.0.6",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
     "nodemon": "^1.17.1",
-    "babel-cli": "^6.6.5"
+    "regenerator-runtime": "^0.13.9",
+    "babelrc-rollup": "3.0.0",
+    "rollup": "0.35.10",
+    "rollup-plugin-babel": "2.6.1"
   }
 }
