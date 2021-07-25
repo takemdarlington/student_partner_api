@@ -1,1 +1,1 @@
-web: yarn run build-prod
+web: yarn add @babel/cli @babel/core && yarn run build-prod
