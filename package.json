@@ -6,7 +6,7 @@
   "license": "StudentPartner",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
+    "start": "node server.js",
     "dev-babel": "nodemon --exec babel-node index.js",
     "build-babel": "babel ./model/ --out-dir build && babel index.js --out-file server.js",
     "build-prod": "npm run build-babel && node server.js"
