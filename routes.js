@@ -5,8 +5,10 @@ const router = new Router()
 // const user = require('./build/user/router')
 // const pet = require('./build/pet/router')
 // const faculty = require('./build/faculty/router')
-import user from './build/user/router';
-import faculty from './build/faculty/router';
+
+
+// import user from './build/user/router';
+// import faculty from './build/faculty/router';
 
 // NOTE: Change routes to deploy
 // const user = require('./model/user/router')
