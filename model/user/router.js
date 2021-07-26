@@ -1,14 +1,19 @@
-const controller = require('./controller')
+// const controller = require('./controller')
+import UserCon from './controller';
 const Router = require('express').Router
 const router = new Router()
 
 router.route('/')
-  .get((...args) => controller.find(...args))
-  .post((...args) => controller.create(...args))
+  .get((...args) => UserCon.find(...args))
+  .post((...args) => UserCon.create(...args))
 
 router.route('/:id')
-  .put((...args) => controller.update(...args))
-  .get((...args) => controller.findById(...args))
-  .delete((...args) => controller.remove(...args))
+  .put((...args) => UserCon.update(...args))
+  .get((...args) => UserCon.findById(...args))
+  .delete((...args) => UserCon.remove(...args))
 
-module.exports = router
+router.route('/:id/faculty')
+  .post((...args) => UserCon.update(...args))
+
+export default router;
+// module.exports = router

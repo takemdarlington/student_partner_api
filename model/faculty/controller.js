@@ -1,11 +1,12 @@
-const Controller = require('../../lib/controller')
+// const Controller = require('../../lib/controller')
 //const facultyFacade = require('./facade')
 import facultyFacade from './facade'
+import Controller from '../../lib/controller';
 
 class FacultyController extends Controller {
-    super(facultyFacade) {
-        // this.facade = facultyFacade
-    }
+    // super(facultyFacade) {
+    //     // this.facade = facultyFacade
+    // }
 
     //you can override all methods inherited from the base Controller class
     create(req, res, next) {
@@ -15,8 +16,12 @@ class FacultyController extends Controller {
             .catch(err => { res.status(400).json(err); next(err) })
     }
 
+
+
 }
 
-module.exports = new FacultyController(facultyFacade)
+const FacCon = new FacultyController(facultyFacade);
+
+export default FacCon;
 
 

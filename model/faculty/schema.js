@@ -1,9 +1,10 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+import mongoose from 'mongoose';
+
+const { Schema } = mongoose;
 
 const facultySchema = new Schema({
   title: { type: String, required: true },
   body: { type: String }
 })
 
-module.exports = facultySchema
+export default facultySchema;

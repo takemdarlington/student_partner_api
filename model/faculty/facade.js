@@ -1,6 +1,11 @@
-const Facade = require('../../lib/facade')
-const facultySchema = require('./schema')
+// const Facade = require('../../lib/facade')
+// const facultySchema = require('./schema')
 
-class FacultyFacade extends Facade {}
+import Facade from '../../lib/facade';
+import facultySchema from './schema';
 
-module.exports = new FacultyFacade('Faculty', facultySchema)
+class FacultyFacade extends Facade { }
+
+const facultyFacade = new FacultyFacade('Faculty', facultySchema);
+
+export default facultyFacade;
