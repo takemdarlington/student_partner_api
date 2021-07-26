@@ -4,7 +4,9 @@
 
 Student partner app api
 
-
+## Configure for Production
+- Run `yarn run build-babel`
+- Open `routes.js` and update the routes imports to point to the build folder
 
 ## dependencies
 
