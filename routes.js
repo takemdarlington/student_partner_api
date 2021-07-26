@@ -2,10 +2,6 @@ const Router = require('express').Router
 const router = new Router()
 
 // NOTE: This is for deployment
-// const user = require('./build/user/router')
-// const pet = require('./build/pet/router')
-// const faculty = require('./build/faculty/router')
-
 
 // import user from './build/user/router';
 // import faculty from './build/faculty/router';
@@ -14,16 +10,13 @@ const router = new Router()
 // const user = require('./model/user/router')
 
 import user from './model/user/router';
-import faculty from './model/faculty/router';
-// const pet = require('./model/pet/router')
-// const faculty = require('./model/faculty/router')
+import category from './model/category/router'
 
 router.route('/').get((req, res) => {
   res.json({ message: 'Welcome to student-partner API!' })
 })
 
 router.use('/user', user)
-// router.use('/pet', pet)
-router.use('/faculty', faculty)
+router.use('/category', category)
 
 module.exports = router

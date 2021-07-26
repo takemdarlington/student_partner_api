@@ -6,12 +6,6 @@ import Facade from '../../lib/facade';
 import userSchema from './schema';
 
 class UserFacade extends Facade {
-    setFaculty(doc) {
-        // console.log(doc)
-        // userSchema.faculty = doc;
-        this.Model.faculty = doc;
-        // this.Model.save();
-    }
 }
 
 // module.exports = new UserFacade('User', userSchema)

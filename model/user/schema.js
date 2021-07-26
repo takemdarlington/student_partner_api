@@ -2,12 +2,17 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
-import facultySchema from '../faculty/schema';
-
 const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String },
-  faculty: facultySchema
+  token: String,
+  status: String,
+  role: String,
+  image: String,
+  referer: mongoose.ObjectId,
+  tag: String,
+  dateCreated: { type: Date, default: Date.now },
+  dateUpdated: { type: Date, default: Date.now }
 })
 
 module.exports = userSchema
