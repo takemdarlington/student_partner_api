@@ -1,6 +1,6 @@
 "use strict";
 
-var _routes = _interopRequireDefault(require("./routes"));
+var _routesProd = _interopRequireDefault(require("./routes-prod"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json()); // app.use(express.json())
 
 app.use(morgan('tiny'));
-app.use('/', _routes["default"]);
+app.use('/', _routesProd["default"]);
 app.listen(config.server.port, function () {
   console.log("Magic happens on port ".concat(config.server.port));
 });

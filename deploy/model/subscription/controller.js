@@ -7,13 +7,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _controller = _interopRequireDefault(require("../../lib/controller"));
-
 var _facade = _interopRequireDefault(require("./facade"));
+
+var _controller = _interopRequireDefault(require("../../lib/controller"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -29,21 +33,37 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// const userFacade = require('./facade')
-var UserController = /*#__PURE__*/function (_Controller) {
-  _inherits(UserController, _Controller);
+var FacultyController = /*#__PURE__*/function (_Controller) {
+  _inherits(FacultyController, _Controller);
 
-  var _super = _createSuper(UserController);
+  var _super = _createSuper(FacultyController);
 
-  function UserController() {
-    _classCallCheck(this, UserController);
+  function FacultyController() {
+    _classCallCheck(this, FacultyController);
 
     return _super.apply(this, arguments);
   }
 
-  return UserController;
+  _createClass(FacultyController, [{
+    key: "create",
+    // super(facultyFacade) {
+    //     // this.facade = facultyFacade
+    // }
+    //you can override all methods inherited from the base Controller class
+    value: function create(req, res, next) {
+      console.log(req.body);
+      this.facade.create(req.body).then(function (doc) {
+        return res.status(201).json(doc);
+      })["catch"](function (err) {
+        res.status(400).json(err);
+        next(err);
+      });
+    }
+  }]);
+
+  return FacultyController;
 }(_controller["default"]);
 
-var UserCon = new UserController(_facade["default"]);
-var _default = UserCon;
+var FacCon = new FacultyController(_facade["default"]);
+var _default = FacCon;
 exports["default"] = _default;

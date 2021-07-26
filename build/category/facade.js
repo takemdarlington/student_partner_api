@@ -2,15 +2,18 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var _facade = _interopRequireDefault(require("./facade"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _facade = _interopRequireDefault(require("../../lib/facade"));
+
+var _schema = _interopRequireDefault(require("./schema"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -26,39 +29,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Controller = require('../../lib/controller'); //const facultyFacade = require('./facade')
+var CategoryFacade = /*#__PURE__*/function (_Facade) {
+  _inherits(CategoryFacade, _Facade);
 
+  var _super = _createSuper(CategoryFacade);
 
-var FacultyController = /*#__PURE__*/function (_Controller) {
-  _inherits(FacultyController, _Controller);
-
-  var _super = _createSuper(FacultyController);
-
-  function FacultyController() {
-    _classCallCheck(this, FacultyController);
+  function CategoryFacade() {
+    _classCallCheck(this, CategoryFacade);
 
     return _super.apply(this, arguments);
   }
 
-  _createClass(FacultyController, [{
-    key: "super",
-    value: function _super(facultyFacade) {// this.facade = facultyFacade
-    } //you can override all methods inherited from the base Controller class
+  return CategoryFacade;
+}(_facade["default"]);
 
-  }, {
-    key: "create",
-    value: function create(req, res, next) {
-      console.log(req.body);
-      this.facade.create(req.body).then(function (doc) {
-        return res.status(201).json(doc);
-      })["catch"](function (err) {
-        res.status(400).json(err);
-        next(err);
-      });
-    }
-  }]);
+var _default = new CategoryFacade('Category', _schema["default"]);
 
-  return FacultyController;
-}(Controller);
-
-module.exports = new FacultyController(_facade["default"]);
+exports["default"] = _default;

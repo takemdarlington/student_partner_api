@@ -2,6 +2,17 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _facade = _interopRequireDefault(require("../../lib/facade"));
+
+var _schema = _interopRequireDefault(require("./schema"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -18,22 +29,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Controller = require('../../lib/controller');
+var CategoryFacade = /*#__PURE__*/function (_Facade) {
+  _inherits(CategoryFacade, _Facade);
 
-var petFacade = require('./facade');
+  var _super = _createSuper(CategoryFacade);
 
-var PetController = /*#__PURE__*/function (_Controller) {
-  _inherits(PetController, _Controller);
-
-  var _super = _createSuper(PetController);
-
-  function PetController() {
-    _classCallCheck(this, PetController);
+  function CategoryFacade() {
+    _classCallCheck(this, CategoryFacade);
 
     return _super.apply(this, arguments);
   }
 
-  return PetController;
-}(Controller);
+  return CategoryFacade;
+}(_facade["default"]);
 
-module.exports = new PetController(petFacade);
+var _default = new CategoryFacade('Category', _schema["default"]);
+
+exports["default"] = _default;

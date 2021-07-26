@@ -1,24 +1,26 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Schema = _mongoose["default"].Schema;
-var userSchema = new Schema({
-  username: {
+var CategorySchema = new Schema({
+  name: {
     type: String,
     required: true
   },
-  password: {
+  status: {
     type: String
   },
-  token: String,
-  status: String,
-  role: String,
-  image: String,
-  referer: _mongoose["default"].ObjectId,
   tag: String,
+  image: String,
+  parent: _mongoose["default"].ObjectId,
   dateCreated: {
     type: Date,
     "default": Date.now
@@ -28,4 +30,5 @@ var userSchema = new Schema({
     "default": Date.now
   }
 });
-module.exports = userSchema;
+var _default = CategorySchema;
+exports["default"] = _default;

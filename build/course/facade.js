@@ -2,6 +2,17 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _facade = _interopRequireDefault(require("../../lib/facade"));
+
+var _schema = _interopRequireDefault(require("./schema"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -18,22 +29,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Facade = require('../../lib/facade');
+var FacultyFacade = /*#__PURE__*/function (_Facade) {
+  _inherits(FacultyFacade, _Facade);
 
-var petSchema = require('./schema');
+  var _super = _createSuper(FacultyFacade);
 
-var PetFacade = /*#__PURE__*/function (_Facade) {
-  _inherits(PetFacade, _Facade);
-
-  var _super = _createSuper(PetFacade);
-
-  function PetFacade() {
-    _classCallCheck(this, PetFacade);
+  function FacultyFacade() {
+    _classCallCheck(this, FacultyFacade);
 
     return _super.apply(this, arguments);
   }
 
-  return PetFacade;
-}(Facade);
+  return FacultyFacade;
+}(_facade["default"]);
 
-module.exports = new PetFacade('Pet', petSchema);
+var facultyFacade = new FacultyFacade('Faculty', _schema["default"]);
+var _default = facultyFacade;
+exports["default"] = _default;

@@ -1,9 +1,5 @@
 "use strict";
 
-var _routes = _interopRequireDefault(require("./routes"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var express = require('express');
 
 var mongoose = require('mongoose');
@@ -16,7 +12,9 @@ var morgan = require('morgan');
 
 var bluebird = require('bluebird');
 
-var config = require('./config'); //const routes = require('./routes')
+var config = require('./config');
+
+var routes = require('./routes'); // import routes from './routes-prod';
 
 
 var app = express();
@@ -32,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json()); // app.use(express.json())
 
 app.use(morgan('tiny'));
-app.use('/', _routes["default"]);
+app.use('/', routes);
 app.listen(config.server.port, function () {
   console.log("Magic happens on port ".concat(config.server.port));
 });

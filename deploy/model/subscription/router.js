@@ -10,6 +10,7 @@ var _controller = _interopRequireDefault(require("./controller"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // const controller = require('./controller')
+// import controller from 
 var Router = require('express').Router;
 
 var router = new Router();
@@ -24,10 +25,7 @@ router.route('/:id').put(function () {
   return _controller["default"].findById.apply(_controller["default"], arguments);
 })["delete"](function () {
   return _controller["default"].remove.apply(_controller["default"], arguments);
-});
-router.route('/:id/faculty').post(function () {
-  return _controller["default"].update.apply(_controller["default"], arguments);
-});
-var _default = router; // module.exports = router
+}); // module.exports = router
 
+var _default = router;
 exports["default"] = _default;

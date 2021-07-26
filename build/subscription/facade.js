@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _controller = _interopRequireDefault(require("../../lib/controller"));
+var _facade = _interopRequireDefault(require("../../lib/facade"));
 
-var _facade = _interopRequireDefault(require("./facade"));
+var _schema = _interopRequireDefault(require("./schema"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -29,21 +29,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-// const userFacade = require('./facade')
-var UserController = /*#__PURE__*/function (_Controller) {
-  _inherits(UserController, _Controller);
+var FacultyFacade = /*#__PURE__*/function (_Facade) {
+  _inherits(FacultyFacade, _Facade);
 
-  var _super = _createSuper(UserController);
+  var _super = _createSuper(FacultyFacade);
 
-  function UserController() {
-    _classCallCheck(this, UserController);
+  function FacultyFacade() {
+    _classCallCheck(this, FacultyFacade);
 
     return _super.apply(this, arguments);
   }
 
-  return UserController;
-}(_controller["default"]);
+  return FacultyFacade;
+}(_facade["default"]);
 
-var UserCon = new UserController(_facade["default"]);
-var _default = UserCon;
+var facultyFacade = new FacultyFacade('Faculty', _schema["default"]);
+var _default = facultyFacade;
 exports["default"] = _default;

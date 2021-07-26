@@ -6,9 +6,9 @@ const morgan = require('morgan')
 const bluebird = require('bluebird')
 
 const config = require('./config')
-//const routes = require('./routes')
+const routes = require('./routes')
 
-import routes from './routes';
+// import routes from './routes-prod';
 
 
 
